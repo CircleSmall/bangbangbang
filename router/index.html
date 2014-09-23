@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>router test</title>
+</head>
+
+<body>
+	hello adsfasdf
+    <div class="first"></div>
+    <div class="second"></div>
+    <div class="third"></div>
+</body>
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+<script type="text/javascript" src="underscore.js"></script>
+<script type="text/javascript" src="history.js"></script>
+<script type="text/javascript" src="router.js"></script>
+<script type="text/javascript">
+var workspace = new router({
+    routes: {
+        "help": "help", // #help
+        "search/:query": "search", // #search/kiwis
+        "search/:query/p:page": "search" // #search/kiwis/p7
+    },
+
+    help: function() {
+        console.log('help');
+    },
+
+    search: function(query, page) {
+        console.log(query)
+        console.log(page)
+    }
+});
+his.start();
+</script>
+<script type="text/javascript" src="event.js"></script>
+
+</html>
