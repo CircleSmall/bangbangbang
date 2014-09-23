@@ -1,0 +1,34 @@
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+  /*background-color: #eee;*/
+}
+.outbox_nav {
+	border:none;
+}
+.panel-heading {
+	text-align: left;
+}
+.content {
+	margin-top: 0;
+	padding: 10px;
+	text-align: right;
+}
+.outbox_button {
+	display: inline-block;
+	margin-right: 20px;
+}
+.panel-body ul li {
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+}
+.panel-body ul li a{
+	display: inline;
+}
+.panel-body ul li span{
+	display: inline;
+}
+#messageContent,#returnStatus {
+	display: none;
+}

@@ -1,0 +1,37 @@
+body {
+  min-height: 700px;
+  padding-top: 70px;
+  /*background-color: #eee;*/
+}
+.contact {
+	background: #ccc;
+}
+.reply {
+	display: inline-block;
+	margin-right: 20px;
+}
+.panel-body {
+	display: none;
+}
+.username {
+	color:#ffba06;
+}
+
+#num {
+	height: 567px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+#sidebar .list-group-item {
+	font-weight: bold;
+}
+#sidebar .list-group-item .content {
+	display: block;
+	margin-top: 4px;
+	color: #428bca;
+	font-size: 12px;
+	height: 18px;
+	overflow: hidden;
+	/*font-weight: bold;*/
+}

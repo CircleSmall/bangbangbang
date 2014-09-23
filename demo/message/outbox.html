@@ -1,0 +1,100 @@
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="优课急送短信平台">
+    <meta name="author" content="">
+
+    <title>优课急送短信平台</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/outbox.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">优课急送短信平台</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="outbox.html">发件箱</a>
+                    </li>
+                    <li>
+                        <a href="inbox.html">收件箱</a>
+                    </li>
+                    <!-- <li>
+                    <a href="#">联系人</a>
+                </li>
+                -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                    <a href="javascript:;" id="username"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="returnLogin">退出登录</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id = "main">
+    <div class="container bs-example">
+        <ul class="nav nav-tabs outbox_nav">
+            <li class="active" rel="fillDerection">
+                <a href="#">填写收件人</a>
+            </li>
+            <li class="" rel="messageContent">
+                <a href="#">内容模板</a>
+            </li>
+            <li class="" rel="returnStatus">
+                <a href="#">返回状态</a>
+            </li>
+        </ul>
+        <div class="panel panel-default content outbox_panel">
+            <div class="panel-body">
+                <div id="fillDerection" class="body_content">
+                    <textarea class="form-control" name="" id="" rows="10"></textarea>
+                    <button type="button" class="btn outbox_button btn-default navbar-btn" next_rel="1">下一步</button>
+                </div>
+
+                <div id="messageContent" class="body_content">
+                    <textarea class="form-control" name="" id="" rows="10"></textarea>
+                    <button type="button" class="btn outbox_button btn-default navbar-btn" next_rel="2">发送</button>
+                </div>
+
+                <div id="returnStatus" class="body_content">
+                    <ul class="nav nav-pills nav-stacked"></ul>
+                    <div class="btn-group" data-toggle="buttons" style="maring-right:20px;">
+                        <label class="btn  btn-default navbar-btn returnFill">
+                            <input type="checkbox">继续发送</label>
+                        <label class="btn  btn-default navbar-btn seeReply">
+                            <input type="checkbox">查看回复</label>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/mustache.js"></script>
+<script type="text/javascript" src="js/outbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+message 表：
+
+	time : 时间
+	status : message 状态信息反馈（1为成功，2为失败）
+	type : 发送类型（1是broadcaster 给 receiver 发信息，2是receiver 给broadcaster 发信息）
+	deleted: 是否删除（目前这个功能还没做）
+	content:信息的内容
+	broadcaster : type 为1 时是发送人，为2时是接收人
+	receiver : type 为1 时是接收人，为2时是发送人
+	isShowMessage: 是否作未读信息显示

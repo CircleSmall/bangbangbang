@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>计分牌</title>
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="./css/index.css" rel="stylesheet"></head>
+<body>
+
+  <header class="header container smallpadding">
+    <img src="img/deng.png" class="deng_left">
+    <img src="img/deng.png" class="deng_right">
+  <input type="text" class="logo" value="马上有钱"></header>
+<hr class="embossed">
+<div id="wrapper">
+
+  <div id="main">
+    <div class="container">
+      <!-- 计分牌显示 -->
+      <section class="row">
+        <div class="span4 team">
+          <input class="name" value="DREAM">
+          <hr class="black">
+          <div class="score">00</div>
+          <div class="count" rel="c1">
+            <div class="half">
+              <ul class="first">
+                <li>
+                  <span class="button">+50</span>
+                </li>
+                <li>
+                  <span class="button">+500</span>
+                </li>
+                <li>
+                  <span class="button">+1000</span>
+                </li>
+                <div class="clear"></div>
+              </ul>
+            </div>
+            <div class="half">
+              <ul>
+                <li>
+                  <span class="button">-50</span>
+                </li>
+                <li>
+                  <span class="button">-500</span>
+                </li>
+                <li>
+                  <span class="button">-1000</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <canvas id="c1"></canvas>
+          <textarea class="note"></textarea>
+
+        </div>
+
+        <div class="span4 vs">
+          <!-- <img src="img/vs.jpg"></div>
+        -->
+        <span>VS</span>
+      </div>
+
+      <div class="span4 team">
+        <input class="name" value="DREAM">
+        <hr class="black">
+        <div class="score">00</div>
+        <div class="count" rel="c2">
+          <div class="half">
+            <ul class="first">
+              <li>
+                <span class="button">+50</span>
+              </li>
+              <li>
+                <span class="button">+500</span>
+              </li>
+              <li>
+                <span class="button">+1000</span>
+              </li>
+              <div class="clear"></div>
+            </ul>
+          </div>
+          <div class="half">
+            <ul>
+              <li>
+                <span class="button" id="a1">-50</span>
+              </li>
+              <li>
+                <span class="button" id="a2">-500</span>
+              </li>
+              <li>
+                <span class="button">-1000</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <canvas id="c2"></canvas>
+        <textarea class="note"></textarea>
+      </div>
+    </section>
+    <!-- 记分牌显示end --> </div>
+</div>
+
+<!-- 计时器 -->
+<section class="timer">
+  <div class="clock">
+    <span class="hour">00</span>
+    :
+    <span class="minute">00</span>
+    :
+    <span class="second">00</span>
+  </div>
+  <div class="timer_button">
+    <span class="start button" rel="start">开始</span>
+    <span class="reset button" rel="reset">清零</span>
+  </div>
+</section>
+<!-- 计时器end -->
+
+</div>
+<!-- wrapper end -->
+
+<footer id="footer"></footer>
+
+<div id="canvases"></div>
+
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/gravityBall.js"></script>
+<script type="text/javascript" src="js/rain.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
