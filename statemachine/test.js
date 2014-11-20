@@ -6,7 +6,7 @@ var workspace = new router({
     },
 
     first: function() {
-        view.first.active();
+        view.first.active();//视图启动
     },
 
     second: function() {
@@ -18,7 +18,9 @@ var workspace = new router({
     }
 });
 
-his.start();
+his.start({
+    // pushState: true
+});
 // 改互斥bug时特别蛋疼
 // 互斥的逻辑： 1、词典的各个tab的切换
 //              2、其他互斥（菜单栏、快插等）

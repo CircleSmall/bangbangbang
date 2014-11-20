@@ -1,123 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>test</title>
     <style type="text/css">
-    .out, .inner {
-    }
-    .out {
-        height: 100px;
-        overflow-y: auto;
-    }
-    #content {
-        width: 500px;
-        height: 500px;
-    } 
-    iframe {
-        border: none;
-        width: 100%;
-        height: 100%;
-    }
-    ::-webkit-scrollbar {
-    height: 7px;
-    width: 7px;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:vertical {
-    height: 50px;
-    background: transparent;
-    border-radius: 6px;
-}
-
-html:hover ::-webkit-scrollbar-thumb:vertical:active {
-    background: transparent;
-}
-
-html:hover ::-webkit-scrollbar-thumb:vertical {
-    height: 50px;
-    background: #ccc;
-    border-radius: 6px;
-}
-
-html:hover ::-webkit-scrollbar-thumb:vertical:active {
-    background: #969696;
-}
-
-::-webkit-scrollbar-track-piece:vertical {
-    background: transparent;
-    border-radius: 6px;
-}
-
-html:hover ::-webkit-scrollbar-track-piece:vertical {
-    background: #e1e1e1;
-}
-
-::-webkit-scrollbar-thumb:horizontal {
-    height: 50px;
-    background: transparent;
-    border-radius: 6px;
-}
-
-html:hover ::-webkit-scrollbar-thumb:horizontal:active {
-    background: transparent;
-}
-
-html:hover ::-webkit-scrollbar-thumb:horizontal {
-    height: 50px;
-    background: #ccc;
-    border-radius: 6px;
-}
-
-html:hover ::-webkit-scrollbar-thumb:horizontal:active {
-    background: #969696;
-}
-
-::-webkit-scrollbar-track-piece:horizontal {
-    background: transparent;
-    border-radius: 6px;
-}
-
-html:hover ::-webkit-scrollbar-track-piece:horizontal {
-    background: #e1e1e1;
-}
-
-::-webkit-scrollbar-corner {
-    background: #f2f2f2;
-}
+        html,body{height:100%;width:100%}
+        div{width:20px;height:20px;background-color:black;position:absolute;display:inline-block}
     </style>
 </head>
-
 <body>
-    <input type="text" id="input">
-    <div id="text">
-        <p>
-            <input type="text" />
-        </p>
-        <div class="aaron">
-            <input type="checkbox" name="readme" />
-            <input type="text" name="22" />
-            <input type="text" name="223" />
-            <p>Sizzle</p>
-        </div>
-    </div> 
-    <div id="content">
-    <iframe src="http://shared.ydstatic.com/aio/laowai_pc/index.html" frameborder="0"></iframe>
-    </div>
+    <div id="content" style="height:100%;width:100%;background-color:#979797;overflow:hidden;position:relative"></div>
+    <script type="text/javascript">
+        var cArray = new Array();
 
+        for (var i = 0; i < 1500; i++) {
+            var x = parseInt(Math.random() * document.body.clientWidth);
+            var y = parseInt(Math.random() * document.body.clientHeight);
+            var id = newGuid();
+            content.innerHTML += '<div id="' + id + '"></div>';
+            cArray.push(new Clock(x, y, 100, id));
+        }
+
+        function Clock(x, y, r, id) {
+            this.start = new Date();
+            this.r = r;
+            this.x = x;
+            this.y = y;
+            this.offsetX = r;
+            this.offsetY = 0;
+            this.id = id;
+            this.draw = function(){
+                //update data
+                var timespan = new Date() - this.start;
+                var offsetR = ((timespan % 36000) % 720) / 360 * Math.PI;
+                this.offsetX = this.r * Math.cos(offsetR);
+                this.offsetY = this.r * Math.sin(offsetR);
+                //draw
+                var dom = document.getElementById(this.id);
+                dom.style.left = this.x + this.offsetX + 'px';
+                dom.style.top = this.y + this.offsetY + 'px';
+
+                //var that = this;                                  //test case 01
+                //setTimeout(function(){that.draw()}, 40);          //test case 01 - 1
+                //requestAnimationFrame(function(){that.draw()});   //test case 01 - 2
+            }
+            //this.draw();                                          //test case 01
+        }
+
+        function renderLoop(){
+            for (var i = 0; i < cArray.length; i++) {
+                cArray[i].draw();
+            }
+            //setTimeout(renderLoop, 20);           //test case 02 - 1
+            requestAnimationFrame(renderLoop);      //test case 02 - 2
+        }
+        renderLoop();                               //test case 02
+
+        function newGuid() {
+            var guid = "";
+            for (var i = 1; i <= 32; i++) {
+                var n = Math.floor(Math.random() * 16.0).toString(16);
+                guid += n;
+                if ((i == 8) || (i == 12) || (i == 16) || (i == 20))
+                    guid += "-";
+            }
+            return guid;
+        }
+    </script>
 </body>
-<script type="text/javascript">
-    
-</script>
-<script type="text/javascript" src="jquery-1.11.1.js"></script>
-<script type="text/javascript">
-    
-</script>
-<script type="text/javascript" src="sizzle - 副本.js"></script>
-<script type="text/javascript" src="sea-debug.js"></script>
-<script type="text/javascript" src="underscore.js"></script>
-<script type="text/javascript" src="test.js"></script>
-
 </html>

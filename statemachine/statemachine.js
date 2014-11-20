@@ -27,3 +27,4 @@ var statemachine = (function(window, _) {
 
 // todo： 
    // 先把其他所有元素deactive，再把当前元素active
+   // 动画支持

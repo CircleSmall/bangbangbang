@@ -28,7 +28,7 @@ var his = (function() {
 	History.started = false;
 
 	// Set up all inheritable **Backbone.History** properties and methods.
-	_.extend(History.prototype, {
+	_.extend(History.prototype, _.event, {
 
 		// The default interval to poll for hash changes, if necessary, is
 		// twenty times a second.
@@ -97,11 +97,11 @@ var his = (function() {
 			// Depending on whether we're using pushState or hashes, and whether
 			// 'onhashchange' is supported, determine how we check the URL state.
 			if (this._hasPushState) {
-				// $(window).on('popstate', this.checkUrl);
-				window.onpopstate  = this.checkUrl;
+				$(window).on('popstate', this.checkUrl);
+				// window.onpopstate  = this.checkUrl;
 			} else if (this._wantsHashChange && ('onhashchange' in window) && !oldIE) {
-				// $(window).on('hashchange', this.checkUrl);
-				window.onhashchange = this.checkUrl;
+				$(window).on('hashchange', this.checkUrl);
+				// window.onhashchange = this.checkUrl;
 			} else if (this._wantsHashChange) {
 				this._checkUrlInterval = setInterval(this.checkUrl, this.interval);
 			}
@@ -156,6 +156,7 @@ var his = (function() {
 		// calls `loadUrl`, normalizing across the hidden iframe.
 		checkUrl: function(e) {
 			var current = this.getFragment();
+			// this.frament 是上一个url
 			if (current === this.fragment && this.iframe) {
 				current = this.getFragment(this.getHash(this.iframe));
 			}

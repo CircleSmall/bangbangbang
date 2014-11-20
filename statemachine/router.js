@@ -11,7 +11,7 @@ var router = (function(history){
   var splatParam    = /\*\w+/g;
   var escapeRegExp  = /[\-{}\[\]+?.,\\\^$|#\s]/g;
 
-  _.extend(Router.prototype, {
+  _.extend(Router.prototype, _.event, {
     // 初始化函数
     initialize: function(){},
 
@@ -32,9 +32,9 @@ var router = (function(history){
       history.route(route, function(fragment) {
         var args = router._extractParameters(route, fragment);
         router.execute(callback, args);//在这里执行每个路由对应的函数
-        // router.trigger.apply(router, ['route:' + name].concat(args));//触发基于动作名称的事件
-        // router.trigger('route', name, args);
-        // history.trigger('route', router, name, args);
+        router.trigger.apply(router, ['route:' + name].concat(args));//触发基于动作名称的事件
+        router.trigger('route', name, args);
+        history.trigger('route', router, name, args);
       });
       return this;
     },

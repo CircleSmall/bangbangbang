@@ -1,26 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>状态机 eg</title>
-    <style type="text/css">
-        #first, #second, #third {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
 </head>
+
 <body>
 
-<div id = "first">first</div>
-<div id = "second">second</div>
-<div id = "third">third</div>
+    <div class="container">
+        <div class="jumbotron" id="first">
+            <h1>first</h1>
+            <p>First  This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+            <p>
+                <a class="btn btn-lg btn-primary" href="#second" role="button">next</a>
+            </p>
+        </div>
+        <div class="jumbotron" id="second">
+            <h1>second</h1>
+            <p>Second This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+            <p>
+                <a class="btn btn-lg btn-primary" href="#first" role="button">prev</a>
+                <a class="btn btn-lg btn-primary" href="#third" role="button">next</a>
+            </p>
+        </div>
+        <div class="jumbotron" id="third">
+            <h1>third</h1>
+            <p>Third  This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+            <p>
+                <a class="btn btn-lg btn-primary" href="#second" role="button">prev</a>
+            </p>
+        </div>
+    </div>
 
-<script type="text/javascript" src="underscore.js"></script>
-<script type="text/javascript" src="event.js"></script>
-<script type="text/javascript" src="history.js"></script>
-<script type="text/javascript" src="router.js"></script>
-<script type="text/javascript" src="statemachine.js"></script>
-<script type="text/javascript" src="register.js"></script>
-<script type="text/javascript" src="test.js"></script>
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+    var Backbone = {};
+    Backbone.$ = $;
+    </script>
+    <script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="event.js"></script>
+    <script type="text/javascript" src="history.js"></script>
+    <script type="text/javascript" src="router.js"></script>
+    <script type="text/javascript" src="statemachine.js"></script>
+    <script type="text/javascript" src="register.js"></script>
+    <script type="text/javascript" src="test.js"></script>
 </body>
+
 </html>
