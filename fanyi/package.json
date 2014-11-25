@@ -1,0 +1,19 @@
+{
+  "name": "zhaopin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.corp.youdao.com/fengshq/zhaopin.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
